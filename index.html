@@ -11,8 +11,8 @@
   <link href="./css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">FaroFood</a>
+  <nav class="light-red lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="" class="brand-logo"><img class="circle" alt="" width="105px" style="margin-left:-40px; margin-top:10px;" src="images/farofood.png"></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#!">Lista de foodtrucks</a></li>
 		<li><a href="#!">Promoções</a></li>
@@ -30,10 +30,11 @@
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
 		<div class="mostra-mapa">
-			<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+			<br><h5>Responda o formulário clicando <a href="https://goo.gl/ON0cVt">aqui</a> que em seguida lhe enviaremos o cupom!</h5>
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcHX1_YtKVqW-xw8QzOiRncNOVwpJPow0&callback=initMap"></script>
 			<section>
 				<article>
-					<p><span id="status">Por favor aguarde enquanto nós tentamos locar você...</span></p>
+					<p><span id="status">Por favor aguarde enquanto nós tentamos localizar você...</span></p>
 				</article>
 			 </section>
 		</div>
@@ -51,70 +52,44 @@
     <li><a href="#!">menor preço</a></li>
     <li class="divider"></li>
     <li><a href="#!">maior preço</a></li>
+	<li><a href="#!">melhor avaliação</a></li>
   </ul>
 		<ul class="collection mostra-lista">
 			
-			<li class="collection-item avatar" style="cursor:pointer;" onclick="javascript:carregaMapa(-15.7544361,-47.9328306)">
-				<img class="circle" alt="" src="images/yuna.jpg">
-				<span class="title">Geléia Burger</span>
+			<li class="collection-item avatar" style="cursor:pointer;" onclick="javascript:carregaMapa(-15.8439020,-48.0005460)">
+				<img class="circle" alt="" src="images/gutruck.jpg">
+				<span class="title">Gutruck StreetFood</span>
 				<p>
+					Dia 29/10/2016 de 18:00 as 23:00<br>
 					Categoria: Hamburger					
 				</p>
 					<a class="secondary-content" href="#!">
 						<i class="material-icons">grade</i>
 					</a>
 			</li>
+			<li class="collection-item avatar" style="cursor:pointer;" onclick="javascript:carregaMapa(-15.8439020,-48.0005460)">
+				<img class="circle" alt="" src="images/como.jpg">
+				<span class="title">Como FoodTruck</span>
+				<p>
+					Dia 29/10/2016 de 18:00 as 23:00<br>
+					Categoria: Hamburger					
+				</p>
+					<a class="secondary-content" href="#!">
+						<i class="material-icons">grade</i>
+					</a>
+			</li>
+			<li class="collection-item avatar" style="cursor:pointer;" onclick="javascript:carregaMapa(-15.783781,-47.914833)">
+				<img class="circle" alt="" src="images/elperronegro.jpeg">
+				<span class="title">El Perro Negro</span>
+				<p>
+					Dia 30/10/2016 de 17:00 as 22:00<br>
+					Categoria: Hot Dog					
+				</p>
+					<a class="secondary-content" href="#!">
+						<i class="material-icons">grade</i>
+					</a>
+			</li>
 			
-			<li class="collection-item avatar">
-				<img class="circle" alt="" src="images/yuna.jpg">
-				<span class="title">Title</span>
-				<p>
-					First Line<br>
-					Second Line	
-				</p>
-					<a class="secondary-content" href="#!">
-						<i class="material-icons">grade</i>
-					</a>
-					<a class="secondary-content" href="#!">
-						<i class="material-icons">grade</i>
-					</a>
-					<a class="secondary-content" href="#!">
-						<i class="material-icons">grade</i>
-					</a>
-			</li>
-			<li class="collection-item avatar">
-				<img class="circle" alt="" src="images/yuna.jpg">
-				<span class="title">Title</span>
-				<p>
-					First Line<br>
-					Second Line	
-				</p>
-					<a class="secondary-content" href="#!">
-						<i class="material-icons">grade</i>
-					</a>
-			</li>
-			<li class="collection-item avatar">
-				<img class="circle" alt="" src="images/yuna.jpg">
-				<span class="title">Title</span>
-				<p>
-					First Line<br>
-					Second Line	
-				</p>
-					<a class="secondary-content" href="#!">
-						<i class="material-icons">grade</i>
-					</a>
-			</li>
-			<li class="collection-item avatar">
-				<img class="circle" alt="" src="images/yuna.jpg">
-				<span class="title">Title</span>
-				<p>
-					First Line<br>
-					Second Line	
-				</p>
-					<a class="secondary-content" href="#!">
-						<i class="material-icons">grade</i>
-					</a>
-			</li>
 		</ul>
     </div>
   </div>
@@ -164,13 +139,13 @@
         return;
     }
 
-    s.innerHTML = "Você foi localizado!";
+    s.innerHTML = "Foodtruck farejado!";
     s.className = 'success';
 
     var mapcanvas = document.createElement('div');
         mapcanvas.id = 'mapcanvas';
-        mapcanvas.style.height = '400px';
-        mapcanvas.style.width = '560px';
+        mapcanvas.style.height = '600px';
+        mapcanvas.style.width = '800px';
 
     document.querySelector('article').appendChild(mapcanvas);
 
@@ -188,7 +163,7 @@
     var marker = new google.maps.Marker({
         position: latlng,
         map: map,
-        title:"Você está aqui!"
+        title:"Tenha um bom apetite!"
     });
 
 }
